@@ -1,0 +1,12 @@
+{% extends 'base/base_generic.html' %}
+{% block content %}
+  <h2>Articles</h2>
+  <a href="{% url 'article_create' %}">Create a new article</a>
+  <br>
+  <br>
+  <ul>
+    {% for article in articles %}
+      <li><a href="{% url 'article_detail' article.id %}">{{ article.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

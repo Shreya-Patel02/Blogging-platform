@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p><strong>Author:</strong> {{ article.author }}</p>
+    <p><strong>Content:</strong></p>
+    <p>{{ article.content }}</p>
+    <p><strong>Tags:</strong> {{ article.tags }}</p>
+    <p><strong>Created on:</strong> {{ article.created_at }}</p>
+
+    {% if user == article.author %}
+        <a href="{% url 'article_edit' article_id=article.id %}">Edit</a> |
+        <a href="{% url 'article_delete' article_id=article.id %}">Delete</a>
+    {% endif %}
+    <br>
+    <!-- Link to create a comment on this article -->
+    <a href="{% url 'comment_create' article_id=article.id %}">Add a Comment</a><br>
+
+    <!-- Link to list all comments for this article -->
+    <a href="{% url 'comment_list' article_id=article.id %}">View Comments</a><br>
+
+    <!-- Link to go back to the list of articles -->
+    <a href="{% url 'article_list' %}">Back to list</a>
+</body>
+</html>

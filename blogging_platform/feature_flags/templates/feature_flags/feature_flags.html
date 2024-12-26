@@ -1,0 +1,36 @@
+<!-- <form method="post">
+    {% csrf_token %}
+    <label for="llm_article_generation">LLM Article Generation</label>
+    <input type="checkbox" name="llm_article_generation" {% if flags.llm_article_generation %}checked{% endif %}>
+
+    <label for="llm_tags_generation">LLM Tags Generation</label>
+    <input type="checkbox" name="llm_tags_generation" {% if flags.llm_tags_generation %}checked{% endif %}>
+
+    <button type="submit">Save Changes</button>
+</form> -->
+
+<html>
+    <body>
+        <h1>Feature Flags</h1>
+        <p>LLM Article Generation: {% if flags.llm_article_generation %}on{% else %}off{% endif %}</p>
+        <p>LLM Tags Generation: {% if flags.llm_tags_generation %}on{% else %}off{% endif %}</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <label for="llm_article_generation">LLM Article Generation:</label>
+            <select name="llm_article_generation">
+                <option value="on" {% if flags.llm_article_generation %}selected{% endif %}>On</option>
+                <option value="off" {% if not flags.llm_article_generation %}selected{% endif %}>Off</option>
+            </select><br>
+
+            <label for="llm_tags_generation">LLM Tags Generation:</label>
+            <select name="llm_tags_generation">
+                <option value="on" {% if flags.llm_tags_generation %}selected{% endif %}>On</option>
+                <option value="off" {% if not flags.llm_tags_generation %}selected{% endif %}>Off</option>
+            </select><br>
+
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>
+
