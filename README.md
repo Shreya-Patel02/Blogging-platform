@@ -44,13 +44,13 @@ The blogging platform integrates with OpenAI's GPT model for advanced features l
 ## Environment Variables
 The following environment variables are required for the application to work properly:
 
-POSTGRES_DB: The name of the PostgreSQL database (e.g., blogging_db).
-POSTGRES_USER: The PostgreSQL user (e.g., postgres).
-POSTGRES_PASSWORD: The password for the PostgreSQL user.
-OPENAI_API_KEY: The API key for OpenAI integration (for AI-powered features).
-DEBUG: Set to 1 to enable Django's debug mode.
-SECRET_KEY: Django's secret key (should be a unique, secure value).
-DJANGO_ALLOWED_HOSTS: Allowed hosts for your Django app.
+- POSTGRES_DB: The name of the PostgreSQL database (e.g., blogging_db).
+- POSTGRES_USER: The PostgreSQL user (e.g., postgres).
+- POSTGRES_PASSWORD: The password for the PostgreSQL user.
+- OPENAI_API_KEY: The API key for OpenAI integration (for AI-powered features).
+- DEBUG: Set to 1 to enable Django's debug mode.
+- SECRET_KEY: Django's secret key (should be a unique, secure value).
+- DJANGO_ALLOWED_HOSTS: Allowed hosts for your Django app.
 
 
 
